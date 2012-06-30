@@ -36,6 +36,8 @@ $(function() {
     $('#change_header_html').click(function(){
         $('h2').each(function(){
             h2_element_text = $(this).html();
+            // 二重に囲みを付与しないようにする
+            h2_element_text = h2_element_text.replace(/【(.+)】/,"$1");
             $(this).html('【' + h2_element_text + '】');
         });
     });
